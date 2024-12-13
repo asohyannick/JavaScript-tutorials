@@ -1,48 +1,53 @@
-// JavaScript Operators
+// JS If Statements
 /*
-1.Arithmetic operator
-2.Comparison operator
-3.Bitwise operator
-4.Logical operator
-5.Assignment operator
-6.Special operator
+1.If statement
+2.else if statement
+3.else statement
 */
 
+const grade = 85;
+if(grade >= 90) {
+    console.log("Grade A");
+} else if(grade >= 87) {
+    console.log("Grade B");
+} else {
+    console.log("You're  doing your best.")
+}
+// Nested if statements
 
-/*
-Assignment operators 
-Assignment operators are used to assign values to variables in JavaScript. 
-They allow you to store data in a variable so that it can be used later in your code
-assign = operator
-add and  assign +=
-subtract and assign -=
-divide and assign /=
-multiple and assign *=
-modulus and assign %=
-*/
+let age = 20;
+let isStudent = true;
+let hasDrivingExperiences = 2;
+let hasGoodVision = true;
+let nonDrunkard = true;
+let hasDrivingLicense = true;
+let isMarried = true;
 
-let a = 10;
-let b = 10;
-let result = a + b;
-console.log(result);
+if(age >= 18) {
+    if(isStudent) {
+        if(hasDrivingExperiences >= 1) {
+            if(hasGoodVision) {
+                if(nonDrunkard) {
+                    if(hasDrivingLicense) {
+                        console.log("You're qualify to drive.")
+                    } else {
+                        console.log("You're not eligible to drive.")
+                    }
+                }
+            }
+        }
+    }
+}
 
-let x = 5;
-x+= 20;
-console.log(x);
 
-let y = 10;
-y-= 5;
-console.log(y);
+// Using Logical Operators
+if(
+    (age >= 18 && hasDrivingLicense)
+     || (isStudent && hasDrivingExperiences >= 1)
+      || (hasGoodVision && nonDrunkard) || 
+      (hasDrivingLicense && isMarried)) {
+        console.log("You're eligible to drive.")
 
-let j = 20;
-j/= 2;
-console.log(j);
-
-let k = 15;
-k*=2;
-console.log(k);
-
-let p = 10;
-p%=3;
-console.log(p);
-
+} else {
+    console.log("Please buy a driving course online or get a student driving permit.")
+}
